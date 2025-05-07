@@ -1,20 +1,25 @@
 import React from "react";
-import { fontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
+import ItemList from "./ItemList";
+import { artistArray } from "../assets/database/artists";
+import { songsArray } from "../assets/database/songs";
 
 const Main = () => {
   return (
     <div className="main">
-      {/* List of popular artists */}
-
-      <div className="item-list">
-        <div className="item-list__header">
-          <h2>Artistas Populares</h2>
-          <a className="item-list__link" href="/">
-            Mostrar tudo
-          </a>
-        </div>
-      </div>
+      <ItemList
+        title="Artistas populares"
+        items={5}
+        arrayList={artistArray}
+        path="/artists"
+        idPath="/artists"
+      />
+      <ItemList
+        title="Músicas populares"
+        items={10}
+        arrayList={songsArray}
+        path="/songs"
+        idPath="/songs"
+      />
     </div>
   );
 };
