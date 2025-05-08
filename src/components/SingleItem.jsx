@@ -12,7 +12,7 @@ const SingleItem = ({ id, artist, name, image, idPath }) => {
             <img
               className="single-item__image"
               src={image}
-              alt="Imagem do Artista X"
+              alt={`Imagem do Artista ${name}`}
             />
           </div>
 

@@ -19,6 +19,9 @@
   --border-radius-s: 5px;
   --border-radius-m: 10px;
   --border-radius-l: 15px;
+
+  max-width: 1280px;
+  margin: auto;
 }
 
 /* Reset */
