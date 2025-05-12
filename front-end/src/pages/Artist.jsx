@@ -8,10 +8,9 @@ import { artistArray } from "../assets/database/artists";
 
 const Artist = () => {
   const { id } = useParams();
-  const idArtist = Number(id);
 
   const artistObj = artistArray.filter(
-    (currentArtistObj, index) => currentArtistObj.id === idArtist
+    (currentArtistObj, index) => currentArtistObj._id === id
   )[0];
 
   const songsArrayFromArtist = songsArray.filter(
@@ -22,7 +21,7 @@ const Artist = () => {
     Math.random() * (songsArrayFromArtist.length - 1)
   );
 
-  const randomIdFromArtistSong = songsArrayFromArtist[randomIndex].id;
+  const randomIdFromArtistSong = songsArrayFromArtist[randomIndex]._id;
 
   return (
     <div className="artist">
@@ -38,7 +37,7 @@ const Artist = () => {
         <h2>Populares</h2>
         <SongList arraySongList={songsArrayFromArtist} />
       </div>
-      <Link to={`song/${randomIdFromArtistSong}`}>
+      <Link to={`/song/${randomIdFromArtistSong}`}>
         <FontAwesomeIcon
           className="single-item__icon single-item__icon--artist"
           icon={faCirclePlay}
